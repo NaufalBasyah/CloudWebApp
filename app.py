@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from config import Config
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -8,7 +9,8 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html', pageTitle="Home Page")
+    imgs = ["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg"]
+    return render_template('index.html', pageTitle="Home Page", imgs=imgs )
 
 @app.route('/test')
 def testss():
