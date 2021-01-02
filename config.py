@@ -7,9 +7,7 @@ class Config(object):
     username=os.environ.get('DB_USERNAME') or 'psecloud5'
     password=os.environ.get('DB_PASSWORD') or 'crimson7'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'mysql+pymysql://' + username + ':' + password + '@' + host + '/products'
-    
+        'mysql+pymysql://' + username + ':' + password + '@' + host + '/cloud'
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
-        
-    
