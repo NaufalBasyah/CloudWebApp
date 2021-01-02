@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    imgs = ["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg"]
+    imgs = ["img1.jpg","img2.jpg","img3.jpg","4.jpg","5.jpg","6.jpg"]
     return render_template('index.html', pageTitle="Home Page", imgs=imgs )
 
 @app.route('/test')
