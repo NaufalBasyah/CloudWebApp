@@ -25,6 +25,12 @@ def aboutUs():
     ctg = db.session.query(categories).all()
     return render_template('aboutUs.html', pageTitle="About Us Page", ctg=ctg)
 
+@app.route('/contactUs')
+def contactUs():
+    ctg = db.session.query(categories).all()
+    return render_template('ContactUs.html', pageTitle="Contact Us Page", ctg=ctg)
+
+
 @app.route('/category/<string:name>')
 def filter_by_category(name):
     ctg = db.session.query(categories).all()
