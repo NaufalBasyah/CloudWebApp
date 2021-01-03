@@ -22,8 +22,11 @@ def testss():
 
 @app.route('/aboutUs')
 def aboutUs():
+    imgs = ["images/ST.png", "images/WDP.png", "KS.png", "GA.png","NFB.png"]
+    ttls = ["Chief Executive Officer","Python Lead","Marketing Manager","Warehousing Manager","UI/UX Design"]
+    names = ["Stanley Tantysco","Wely Dharma Putra","Kennyvito Salim","Girindra Ado Anindito","Naufal Fairisa Basyah"]
     ctg = db.session.query(categories).all()
-    return render_template('aboutUs.html', pageTitle="About Us Page", ctg=ctg)
+    return render_template('aboutUs.html', pageTitle="About Us Page", ctg=ctg, imgs= imgs, ttls=ttls, names = names)
 
 @app.route('/contactUs')
 def contactUs():
@@ -38,7 +41,7 @@ def filter_by_category(name):
         if x.cat_name==name:
             id= x.cat_id
     pd = db.session.query(products).filter_by(cat=id).all()
-    return render_template('filtered.html', pageTitle="{{name}} Product Page", ctg=ctg, pd=pd , id=id)
+    return render_template('filtered.html', pageTitle="%s Product Page" % (name), ctg=ctg, pd=pd , id=id)
 
 
 if __name__ == '__main__':
